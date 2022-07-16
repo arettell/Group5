@@ -1,3 +1,8 @@
+// group5.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -65,7 +70,7 @@ int main(int argc, char* argv[])
 			return -1;
 		}
 		else if (selection == 'a' || selection == 'A')
-			calculate();
+			calculate(booksData);
 		else if (selection == 'p' || selection == 'P')
 			print();
 		else if (selection == 'q' || selection == 'Q')
@@ -111,17 +116,18 @@ bool input(string file_name, books books_sold[numOfBooks])
 			}
 		}
 	}
-	void calculate(books books_sold[numOfBooks]){
+	openFile.close();
+	return true;
+}
+
+	void calculate(books books_sold[numOfBooks]) {
 		for (int row = 0; row < numOfBooks; row++) {
 
 			for (int col = 0; col < bookDetails; col++) {
 
 				float BookPrice = books_sold[numOfBooks].BookPrice;
 				float NumberSold = books_sold[numOfBooks].NumberSold;
-				float TotalSales= BookPrice* NumberSold;
+				float TotalSales = BookPrice * NumberSold;
 			}
 		}
 	}
-
-	openFile.close();
-	return true;
